@@ -87,7 +87,9 @@ textarea {
 .p-relative {
   position: relative;
 }
-
+.line-through {
+  text-decoration: line-through;
+}
 .img-responsive {
  @include img-responsive('block')
 }

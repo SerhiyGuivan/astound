@@ -14,7 +14,7 @@
             var $content = $('<div class="tooltip-content">');
             var $container = $('<div class="tooltip-container">');
             var $tooltip = $('<div class="tooltip">');
-            var $element = $(settings.element);
+            var $element = $(settings.element).clone();
 
             generateTmpl();
 

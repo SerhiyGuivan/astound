@@ -6,7 +6,8 @@
   "author": "Sergey Guivan",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^1.12.4"
+    "jquery": "^1.12.4",
+    "owl.carousel": "^2.2.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
