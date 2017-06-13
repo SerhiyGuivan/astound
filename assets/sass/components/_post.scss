@@ -3,26 +3,26 @@
   margin-bottom: 60px;
   .col-1 {
     @media (min-width: $screen-sm-min) {
-      width: 55.46875%;
+      width: (355 / $width-sm)*100%;
       float: left;
       padding-right: 20px;
       min-height: 1px;
     }
     @media(min-width: $screen-md-min){
-      width: 53.8011696%;
+      width: (460/$width-md)*100%;
       padding-right: 60px;
     }
   }
   .col-2 {
     @media (min-width: $screen-sm-min) {
       float: right;
-      width: 44.53125%;
+      width: (1- 355 / $width-sm)*100%;
       clear: right;
       min-height: 1px;
     }
     @media (min-width: $screen-md-min) {
       float: right;
-      width: 46.1988304%;
+      width: (1-460 / $width-md)*100%;
       clear: right;
       min-height: 1px;
     }
@@ -38,7 +38,7 @@
     }
     @media (min-width: $screen-md-min) {
       float: right;
-      width: 46.1988304%;
+      width: (1-460 / $width-md)*100%;
       min-height: 1px;
       position: relative;
       z-index: 1;
