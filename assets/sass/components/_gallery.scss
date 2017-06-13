@@ -1,0 +1,47 @@
+.gallery {
+  .title {
+    color:  $color-grey;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .items {
+    @media(min-width: $screen-sm-min) {
+      margin: 0 -20px;
+    }
+  }
+  .item {
+    @media(min-width: $screen-sm-min) {
+      float: left;
+      width: 50%;
+      margin-bottom: 40px;
+      padding: 0 20px;
+      min-height: 1px;
+    }
+  }
+  .item-container {
+    position: relative;
+  }
+  .image {
+    img {
+      @include img-responsive('block');
+    }
+  }
+  .price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: url('../images/bg-green.png') repeat scroll 0 0 transparent;
+    .item-container:hover &{
+      color: $color-red;
+    }
+    @media (min-width: $screen-sm-min) {
+      font-size: 22px;
+      font-weight: 700;
+      color: $color-grey;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$font-size-base: 14px;
+$font-family-base: 'Open sans', sans-serif;
+$font-family-extra: 'Oswald ', sans-serif;
+$line-height-base: 1.42857143;
+
+$bg-color: #f6f6f6;
+
+
+$color-default: #282828;
+
+$color-grey: #2c303d;
+$color-grey-light: #ababab;
+$color-red: #ce2c52;
+$color-blue: #2c87ce;
+
+$screen-xs-min: 480px;
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+
+$width-xs: 320px;
+$width-sm: 640px;
+$width-md: 835px;
+
+$container-offset: 10px;
+$container-xs-width: ($width-xs + ($container-offset * 2));
+$container-sm-width: ($width-sm + ($container-offset * 2));
+$container-md-width: ($width-md + ($container-offset * 2));
