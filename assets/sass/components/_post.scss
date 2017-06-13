@@ -1,4 +1,5 @@
 .post {
+  padding-top: 30px;
   margin-bottom: 60px;
   .col-1 {
     @media (min-width: $screen-sm-min) {
@@ -48,6 +49,9 @@
     margin-bottom: 15px;
     text-align: center;
     user-select: none;
+    img {
+      @include img-responsive('inline');
+    }
   }
 
   .item-id {

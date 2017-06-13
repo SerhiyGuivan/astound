@@ -1,23 +1,79 @@
 .gallery {
+  margin-bottom: 40px;
+  @media  (min-width: $screen-sm-min){
+    margin-bottom: 0;
+  }
+  @media  (min-width: $screen-md-min){
+    margin-bottom: 20px;
+  }
+  &-xs-container {
+    @media (max-width: $screen-xs-max) {
+      padding: 0 50px;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+  }
+  &-prev,
+  &-next {
+    position: absolute;
+    width: 29px;
+    height: 50px;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+    z-index: 1;
+    @include text-hide()
+  }
+  &-prev {
+    left: -40px;
+    background: url("../images/arrow-prev.png") no-repeat scroll 0 0 transparent;
+  }
+  &-next {
+    right: -40px;
+    background: url("../images/arrow-next.png") no-repeat scroll 0 0 transparent;
+  }
   .title {
     color:  $color-grey;
     font-size: 24px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
+    @media (min-width: $screen-sm-min) {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    @media (min-width: $screen-md-min) {
+      text-align: left;
+      margin-bottom: 10px;
+    }
   }
   .items {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style: none;
+    @include clearfix();
     @media(min-width: $screen-sm-min) {
       margin: 0 -20px;
+    }
+    @media(min-width: $screen-md-min) {
+      margin: 0 -10px;
     }
   }
   .item {
     @media(min-width: $screen-sm-min) {
-      float: left;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 20px;
       width: 50%;
       margin-bottom: 40px;
-      padding: 0 20px;
       min-height: 1px;
+    }
+    @media(min-width: $screen-md-min) {
+      width: 33.333333%;
+      padding: 0 10px;
+      margin-bottom: 20px;
     }
   }
   .item-container {
@@ -28,20 +84,40 @@
       @include img-responsive('block');
     }
   }
-  .price {
+  .prices {
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     text-align: center;
     background: url('../images/bg-green.png') repeat scroll 0 0 transparent;
-    .item-container:hover &{
-      color: $color-red;
-    }
+    font-size: 18px;
+    padding: 2px 5px;
+    font-weight: 700;
+    color: $color-grey;
     @media (min-width: $screen-sm-min) {
+      padding: 0 5px;
       font-size: 22px;
-      font-weight: 700;
-      color: $color-grey;
+    }
+    @media (min-width: $screen-md-min) {
+      width: auto;
+      bottom: 20px;
+      font-size: 16px;
     }
   }
+  .price {
+    display: inline-block;
+    padding: 0 2px;
+    & + .price {
+      color: $color-red;
+    }
+    &--old {
+      display: none;
+      @media (min-width: $screen-md-min) {
+        display: inline-block;
+      }
+    }
+  }
+
+
 }

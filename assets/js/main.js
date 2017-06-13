@@ -75,12 +75,62 @@
         });
     };
 
+    $.fn.setCarousel = function () {
+
+        var owlOptions = {
+            loop: true,
+            items: 1,
+            margin: 0,
+            nav:true,
+            navContainerClass: 'gallery-nav',
+            navClass: [ 'gallery-prev', 'gallery-next' ],
+            dots: false
+        };
+
+        var screenSize = 767;
+
+        return this.each(function () {
+            var owl = $(this);
+
+            if ( window.innerWidth < screenSize ) {
+                owlInit();
+            }
+
+            $(window).resize(function() {
+                if (  window.innerWidth < screenSize ) {
+                    if ( !owl.hasClass('owl-loaded') ) {
+                        owlInit();
+                    }
+                } else {
+                    if ( owl.hasClass('owl-loaded') ) {
+                        owlDestroy();
+                    }
+                }
+            });
+
+            function owlInit() {
+                owl.addClass('owl-carousel').owlCarousel(owlOptions);
+            }
+
+            function owlDestroy() {
+                owl
+                    .removeClass('owl-carousel')
+                    .trigger('destroy.owl.carousel');
+                owl
+                    .find('.owl-stage-outer')
+                    .children(':eq(0)').unwrap();
+            }
+        });
+    };
+
     $(document).ready(function () {
 
         $('.js-label--share').tooltip({
             title: 'Share with',
             element: '.shares'
         });
+
+        $('.js-gallery-items').setCarousel();
 
     });
 })(jQuery);

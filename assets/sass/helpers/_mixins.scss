@@ -1,0 +1,29 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin text-hide() {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+@mixin img-responsive($display){
+    @if($display == 'block') {
+        display: block;
+    }
+    @if($display == 'inline') {
+        display: inline-block;
+    }
+    max-width: 100%;
+    vertical-align: middle;
+}

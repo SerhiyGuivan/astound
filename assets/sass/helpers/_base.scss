@@ -5,6 +5,7 @@
     box-sizing: border-box;
   }
 }
+
 html {
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -13,21 +14,47 @@ html {
   color: $color-default;
   background-color: $bg-color;
 }
+
 :focus {
   outline: none;
 }
-img {
+
+::selection {
+  background: $color-red;
+  color: #fff;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
   vertical-align: middle;
 }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
 .clearfix {
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
-  &:after {
-    clear: both;
-  }
+ @include clearfix();
 }
 .container {
   padding-left: $container-offset;
@@ -56,23 +83,13 @@ img {
     margin-right: -$container-offset;
   }
 }
+
 .p-relative {
   position: relative;
 }
+
 .img-responsive {
-  display: inline-block;
-  max-width: 100%;
-  vertical-align: middle;
-}
-@mixin img-responsive($display){
-  @if($display == 'block') {
-    display: block;
-  }
-  @if($display == 'inline') {
-    display: inline-block;
-  }
-  max-width: 100%;
-  vertical-align: middle;
+ @include img-responsive('block')
 }
 
 .hidden {
@@ -92,6 +109,7 @@ img {
     }
   }
 }
+
 .u-btn {
   display: inline-block;
   padding: 6px 12px;
